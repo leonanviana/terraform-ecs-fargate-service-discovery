@@ -88,7 +88,7 @@ service_connect_configuration {
 
 ### Como usar
 
-1. Copie `terraform.tfvars.example` para `terraform.tfvars` e preencha os valores
+1. Ajuste os valores padrão das variáveis em `variables.tf` conforme seu ambiente
 2. Atualize o nome do bucket no backend em `main.tf`
 3. Execute a partir do diretório `stage/`:
 
@@ -192,7 +192,7 @@ service_connect_configuration {
 
 ### Usage
 
-1. Copy `terraform.tfvars.example` to `terraform.tfvars` and fill in values
+1. Update the default values in `variables.tf` to match your environment
 2. Update `main.tf` backend bucket name
 3. Run from the `stage/` directory:
 
