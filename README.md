@@ -26,7 +26,8 @@ VPC (privada)
 
 ```
 stage/
-├── main.tf                    # Providers Terraform, backend, módulo VPC
+├── main.tf                    # Providers Terraform, backend
+├── vpc.tf                     # Módulo VPC (subnets, NAT Gateway)
 ├── locals.tf                  # Prefixo e tags comuns
 ├── variables.tf               # Todas as variáveis de entrada
 ├── cloudmap.tf                # Namespace Cloud Map + registros de service discovery
@@ -37,6 +38,7 @@ stage/
 ├── service-internal-tool.tf   # ECS service da ferramenta interna + registro no Cloud Map
 ├── task-internal-tool.tf      # Task definition da ferramenta interna
 └── templates/
+    ├── nginx.conf              # Config do Nginx com proxy_pass para o DNS do Cloud Map
     ├── nginx-json.tpl          # Definição do container Nginx
     └── internal-tool-json.tpl # Definição do container da ferramenta interna
 ```
@@ -128,7 +130,8 @@ VPC (private)
 
 ```
 stage/
-├── main.tf                    # Terraform providers, backend, VPC module
+├── main.tf                    # Terraform providers, backend
+├── vpc.tf                     # VPC module (subnets, NAT Gateway)
 ├── locals.tf                  # Prefix and common tags
 ├── variables.tf               # All input variables
 ├── cloudmap.tf                # Cloud Map namespace + service discovery records
@@ -139,6 +142,7 @@ stage/
 ├── service-internal-tool.tf   # Internal tool ECS service + Cloud Map registration
 ├── task-internal-tool.tf      # Internal tool task definition
 └── templates/
+    ├── nginx.conf              # Nginx config with proxy_pass to Cloud Map DNS
     ├── nginx-json.tpl          # Nginx container definition
     └── internal-tool-json.tpl # Internal tool container definition
 ```
